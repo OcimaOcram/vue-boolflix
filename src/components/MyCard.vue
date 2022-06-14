@@ -1,0 +1,32 @@
+<template>
+   <div class="container">
+    <ul>
+        <li>
+            {{filmDescription.original_title}}
+        </li>
+    </ul>
+   </div>
+
+
+
+</template>
+
+<script>
+export default {
+  name: 'MyCard',
+  props: {
+    filmDescription: Object
+  }
+  
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+
+li {
+  display: inline-block;
+
+}
+
+</style>
