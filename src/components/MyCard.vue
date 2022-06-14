@@ -2,7 +2,11 @@
    <div class="container">
     <ul>
         <li>
-            {{filmDescription.original_title}}
+            <h1>{{filmDescription.title}}</h1>
+            <h2>{{filmDescription.original_title}}</h2>
+            <h3>{{filmDescription.original_language}}</h3>
+            <h4>{{filmDescription.vote_average}}</h4>
+            
         </li>
     </ul>
    </div>
@@ -26,7 +30,7 @@ export default {
 
 li {
   display: inline-block;
-
+  margin: 15px;
 }
 
 </style>
