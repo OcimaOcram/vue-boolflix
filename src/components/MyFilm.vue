@@ -19,6 +19,8 @@
     data() {
         return {
             apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=573c6074892e33f67b46537c63bfbe2c&language=it-IT&query=a",
+            apiUrlTv:"https://api.themoviedb.org/3/search/tv?api_key=573c6074892e33f67b46537c63bfbe2c&language=it-IT&query=a",
+            ListaSerie: [],
             listaFilm: [],
             ricercaUtente: ""
         };
@@ -30,7 +32,9 @@
             console.log(result);
         });
     },
-    components: { MyCard },
+    components: { 
+        MyCard 
+        },
     
     methods: {
         searchFilm() {
@@ -41,7 +45,16 @@
             .then(result => {
             this.listaFilm = result.data.results;
             console.log(result);
-        });
+            });
+            console.log(this.ricercaUtente);
+            this.apiUrlTv= "https://api.themoviedb.org/3/search/tv?api_key=573c6074892e33f67b46537c63bfbe2c&language=it-IT&query=" + this.ricercaUtente;
+            console.log(this.apiUrlTv);
+            axios.get(this.apiUrlTv)
+                .then(result => {
+                this.listaSerie = result.data.results;
+                console.log(result);
+            });
+
         }
     }
 }

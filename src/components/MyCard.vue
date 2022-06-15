@@ -2,7 +2,7 @@
    <div class="container">
     <ul>
         <li>
-            <h1>{{filmDescription.title}}</h1>
+            <h1>{{filmDescription.title}}{{filmDescription.name}}</h1>
             <h2>{{filmDescription.original_title}}</h2>
             <h3>{{filmDescription.original_language}}</h3>
             <h4>{{filmDescription.vote_average}}</h4>
