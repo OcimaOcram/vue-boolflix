@@ -9,11 +9,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-
+import { faStar as faStars } from '@fortawesome/free-regular-svg-icons'
 
 
 
 library.add(faStar)
+library.add(faStars)
 
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)

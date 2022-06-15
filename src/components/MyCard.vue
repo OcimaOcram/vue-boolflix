@@ -7,6 +7,7 @@
             <h2>{{filmDescription.original_title}}</h2>
             <h3><lang-flag :iso="filmDescription.original_language"/></h3>
             <font-awesome-icon v-for="i in starsAverageCalc(filmDescription.vote_average)" :key="i" icon="fa-solid fa-star" />
+            <font-awesome-icon v-for="i in getEmptyStars(filmDescription.vote_average)" :key="i" icon="fa-regular fa-star"/>
             
         </li>
     </ul>
@@ -32,8 +33,15 @@ export default {
         starsAverageCalc (vote){
           let calc =  parseInt(Math.round(vote / 2));
           console.log(calc)
-            return   calc; 
+            return   calc;
+        },
+
+        getEmptyStars(vote) {
+            let empty = parseInt(Math.round(5-(vote/2)));
+            return empty;
         }
+        
+
     }
 
 
