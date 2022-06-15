@@ -6,8 +6,8 @@
             <h1>{{filmDescription.title}}</h1>
             <h2>{{filmDescription.original_title}}</h2>
             <h3><lang-flag :iso="filmDescription.original_language"/></h3>
-            <h4>{{Math.round(filmDescription.vote_average/2)}}</h4>
-             <font-awesome-icon icon="fa-solid fa-star" />
+            <font-awesome-icon v-for="i in starsAverageCalc(filmDescription.vote_average)" :key="i" icon="fa-solid fa-star" />
+            
         </li>
     </ul>
    </div>
@@ -26,9 +26,25 @@ export default {
   
   props: {
     filmDescription: Object
+  
   },
- 
+  methods: {
+        starsAverageCalc (vote){
+          let calc =  parseInt(Math.round(vote / 2));
+          console.log(calc)
+            return   calc; 
+        }
+    }
+
+
+
 }
+
+
+  
+
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -37,6 +53,9 @@ export default {
 li {
   display: inline-block;
   margin: 15px;
+}
+.fa-star{
+    color: yellow;
 }
 
 </style>
