@@ -2,6 +2,7 @@
    <div class="container">
     <ul>
         <li>
+            <img :src="`http://image.tmdb.org/t/p/w342/${seriesDescription.poster_path}`"> 
             <h1>{{seriesDescription.name}}</h1>
             <h2>{{seriesDescription.original_name}}</h2>
             <h3><lang-flag :iso="seriesDescription.original_language"/></h3>

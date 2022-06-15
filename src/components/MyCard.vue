@@ -2,11 +2,12 @@
    <div class="container">
     <ul>
         <li>
+            <img :src="`http://image.tmdb.org/t/p/w342/${filmDescription.poster_path}`"> 
             <h1>{{filmDescription.title}}</h1>
             <h2>{{filmDescription.original_title}}</h2>
             <h3><lang-flag :iso="filmDescription.original_language"/></h3>
-            <h4>{{filmDescription.vote_average}}</h4>
-            
+            <h4>{{Math.round(filmDescription.vote_average/2)}}</h4>
+             <font-awesome-icon icon="fa-solid fa-star" />
         </li>
     </ul>
    </div>
@@ -22,10 +23,11 @@ export default {
   componets: {
     LangFlag
   },
+  
   props: {
     filmDescription: Object
-  }
-  
+  },
+ 
 }
 </script>
 
