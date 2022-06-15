@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <MyFilm/>
+    
   </div>
 </template>
 
@@ -8,10 +9,12 @@
 import MyFilm from './components/MyFilm.vue';
 
 
+
 export default {
   name: 'App',
   components: {
-    MyFilm
+    MyFilm,
+    
 }
 }
 </script>
