@@ -55,7 +55,7 @@
             axios.get(this.apiUrl)
             .then(result => {
             this.listaFilm = result.data.results;
-            console.log(result);
+            console.log(this.ListaSerie);
             });
              this.searchSeries();
             

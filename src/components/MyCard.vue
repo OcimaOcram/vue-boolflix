@@ -4,7 +4,7 @@
         <li>
             <h1>{{filmDescription.title}}{{filmDescription.name}}</h1>
             <h2>{{filmDescription.original_title}}</h2>
-            <h3>{{filmDescription.original_language}}</h3>
+            <h3><lang-flag :iso="filmDescription.original_language"/></h3>
             <h4>{{filmDescription.vote_average}}</h4>
             
         </li>
@@ -16,8 +16,12 @@
 </template>
 
 <script>
+import LangFlag from "vue-lang-code-flags";
 export default {
   name: 'MyCard',
+  componets: {
+    LangFlag
+  },
   props: {
     filmDescription: Object
   }
