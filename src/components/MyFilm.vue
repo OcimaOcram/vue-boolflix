@@ -1,7 +1,12 @@
 <template>
   
     <div>
-        <section id="searchbar"><input type="text" placeholder="search" v-model="ricercaUtente"> <button @click="searchMovie">cerca</button></section>
+        <header>
+            <h1>BoolFix</h1>
+            <section id="searchbar"><input type="text" placeholder="search" v-model="ricercaUtente"> 
+                <button @click="searchMovie">cerca</button>
+            </section>
+        </header>        
         <MyCard
         v-for="element in listaFilm" :key="element.i" :filmDescription="element"
         />
@@ -71,5 +76,13 @@
 </script>
 
 <style scoped lang="scss">
+    h1 {
+        color: red;
+    }
+    header {
+        background-color: black;
+        padding: 15px;
+        margin-bottom: 5px;
+    }
 
 </style>
